@@ -1,0 +1,5 @@
+Regras de Negócio
+RN01: Os valores dos produtos devem estar entre R$50,00 e R$150,00.
+RN02: Produtos iguais já cadastrados há mais de 90 dias devem ser renovados.
+RN03: Permitir cadastro máximo de 150 itens por vez.
+RN04: Somente administrador autenticado pode fazer cadastro de produtos.
