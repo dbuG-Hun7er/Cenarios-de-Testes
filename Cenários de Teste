@@ -1,49 +1,52 @@
 Cenários para RN01: Valores dos Produtos
 
-Partição de Equivalência
+ Partição de Equivalência                                                Saida
 
-Produto com valor de R$49,99 (fora do intervalo permitido).
-Produto com valor de R$50,00 (dentro do intervalo permitido).
-Produto com valor de R$150,00 (dentro do intervalo permitido).
-Produto com valor de R$150,01 (fora do intervalo permitido).
+Produto com valor de R$30,99 (fora do intervalo permitido). Inválido 
+Produto com valor de R$52,00 (dentro do intervalo permitido). Válido
+Produto com valor de R$153,01 (fora do intervalo permitido). Inválido
 
 Análise de Valor Limite
 
-Produto com valor de R$50,00 (no limite inferior).
-Produto com valor de R$149,99 (um centavo abaixo do limite superior).
-Produto com valor de R$150,00 (no limite superior).
+Produto com valor de R$49,99 (abaixo do limite inferior). Inválido
+Produto com valor de R$50,00 (no limite inferior). Válido
+Produto com valor de R$50,01 (acima limite inferior). Válido
+Produto com valor de R$149,99 (um centavo abaixo do limite superior). Válido
+Produto com valor de R$150,00 (no limite superior). Válido
+Produto com valor de R$150,01 (um centavo acima do limite superior). inVálido
+
 Cenários para RN02: Renovação de Produtos
 
 Partição de Equivalência
 
-Produto cadastrado há 89 dias (não requer renovação).
-Produto cadastrado há 90 dias (requer renovação).
-Produto cadastrado há 91 dias (requer renovação).
+Produto cadastrado há 50 dias (não requer renovação). inVálido 
+Produto cadastrado há 156 dias (requer renovação). Válido
+
 
 Análise de Valor Limite
 
-Produto cadastrado há 90 dias (no limite).
-Produto cadastrado há 91 dias (um dia após o limite).
-Cenários para RN03: Cadastro de Itens
+Produto cadastrado há 90 dias (no limite). inVálido
+Produto cadastrado há 91 dias (um dia após o limite). Válido
 
 Partição de Equivalência
 
-Tentativa de cadastro de 149 itens (dentro do limite permitido).
-Tentativa de cadastro de 150 itens (no limite permitido).
-Tentativa de cadastro de 151 itens (fora do limite permitido).
+Tentativa de cadastro de 14 itens (dentro do limite permitido). Válido
+Tentativa de cadastro de 250 itens (no limite permitido). inVálido
 
 Análise de Valor Limite
 
-Cadastro de 150 itens (no limite).
-Cadastro de 151 itens (um item acima do limite).
+Tentativa de cadastro de 149 itens (dentro do limite permitido). Válido
+Tentativa de cadastro de 150 itens (no limite permitido). Válido
+Tentativa de cadastro de 151 itens (fora do limite permitido). inVálido
+
 Cenários para RN04: Autenticação do Administrador
 
 Tabela de Decisão
 
-Usuário autenticado como administrador tenta cadastrar um produto (permitido).
-Usuário não autenticado tenta cadastrar um produto (não permitido).
-Usuário autenticado como usuário comum tenta cadastrar um produto (não permitido).
-Usuário autenticado como administrador tenta cadastrar produtos, mas excede o limite de itens (não permitido).
+Usuário autenticado como administrador tenta cadastrar um produto (permitido). Válido
+Usuário não autenticado tenta cadastrar um produto (não permitido). INVálido
+Usuário autenticado como usuário comum tenta cadastrar um produto (não permitido). inVálido
+Usuário autenticado como administrador tenta cadastrar produtos, mas excede o limite de itens (não permitido). inVálido
 
 
  Tabela de Decisão para RN04
