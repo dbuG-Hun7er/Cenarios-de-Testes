@@ -1,0 +1,126 @@
+Para identificar o impacto e a probabilidade de cada cenário e alocá-los na matriz de risco, vamos primeiro definir esses critérios:
+
+Critérios de Impacto e Probabilidade
+Impacto:
+
+Baixo: O erro causa pequenos inconvenientes, sem grandes prejuízos para a empresa ou clientes.
+Alto: O erro causa prejuízos financeiros, perda de dados ou outros problemas sérios para a empresa ou clientes.
+Probabilidade:
+Baixa: A ocorrência do cenário é pouco frequente ou improvável.
+Alta: A ocorrência do cenário é frequente ou muito provável.
+
+Avaliação dos Cenários
+-----------------------------------------------------
+Cenários para RN01: Valores dos Produtos
+
+1.Produto com valor de R$39,99 (fora do intervalo permitido)
+Impacto: Alto (produto inválido não pode ser vendido)
+Probabilidade: Baixa (valores fora do intervalo são menos frequentes)
+Categoria 3: Baixa probabilidade / Alto impacto
+
+2.Produto com valor de R$88,80 (dentro do intervalo permitido)
+Impacto: Baixo (produto válido)
+Probabilidade: Alta (valores dentro do intervalo são frequentes)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+3.Produto com valor de R$150,00 (dentro do intervalo permitido)
+Impacto: Baixo (produto válido)
+Probabilidade: Alta (valores dentro do intervalo são frequentes)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+4.Produto com valor de R$580,01 (fora do intervalo permitido)
+Impacto: Alto (produto inválido não pode ser vendido)
+Probabilidade: Baixa (valores fora do intervalo são menos frequentes)
+Categoria 3: Baixa probabilidade / Alto impacto
+
+5.Produto com valor de R$49,99 (limite inferior)
+Impacto: Alto (produto inválido não pode ser vendido)
+Probabilidade: Baixa (limite inferior raro)
+Categoria 3: Baixa probabilidade / Alto impacto
+
+6.Produto com valor de R$50,00 (limite inferior)
+Impacto: Baixo (produto válido)
+Probabilidade: Alta (limite inferior comum)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+7.Produto com valor de R$149,99 (limite superior)
+Impacto: Baixo (produto válido)
+Probabilidade: Alta (limite superior comum)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+8.Produto com valor de R$150,00 (limite superior)
+Impacto: Baixo (produto válido)
+Probabilidade: Alta (limite superior comum)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+--------------------------------------------------------
+Cenários para RN02: Renovação de Produtos
+
+9.Produto cadastrado há 89 dias (não requer renovação)
+Impacto: Baixo (nenhuma ação necessária)
+Probabilidade: Alta (frequente)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+10.Produto cadastrado há 90 dias (requer renovação)
+Impacto: Alto (ação necessária para manter produto atualizado)
+Probabilidade: Alta (comum)
+Categoria 4: Alta probabilidade / Alto impacto
+
+11.Produto cadastrado há 91 dias (requer renovação)
+Impacto: Alto (ação necessária para manter produto atualizado)
+Probabilidade: Alta (comum)
+Categoria 4: Alta probabilidade / Alto impacto
+
+--------------------------------------------------------------
+
+Cenários para RN03: Cadastro de Itens
+
+12.Cadastro de 149 itens (dentro do limite permitido)
+Impacto: Baixo (cadastro permitido)
+Probabilidade: Alta (comum)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+13.Cadastro de 150 itens (no limite permitido)
+Impacto: Baixo (cadastro permitido)
+Probabilidade: Alta (comum)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+
+14.Cadastro de 151 itens (fora do limite permitido)
+Impacto: Alto (cadastro não permitido)
+Probabilidade: Baixa (limite raramente ultrapassado)
+Categoria 3: Baixa probabilidade / Alto impacto
+
+---------------------------------------------------------
+
+Cenários para RN04: Autenticação do Administrador
+
+15.Usuário autenticado como administrador tenta cadastrar um produto
+Impacto: Baixo (cadastro permitido)
+Probabilidade: Alta (comum)
+Categoria 2: Alta probabilidade / Baixo impacto
+
+16.Usuário não autenticado tenta cadastrar um produto
+Impacto: Alto (segurança comprometida)
+Probabilidade: Baixa (raro)
+Categoria 3: Baixa probabilidade / Alto impacto
+
+17.Usuário autenticado como usuário comum tenta cadastrar um produto
+Impacto: Alto (segurança comprometida)
+Probabilidade: Baixa (raro)
+Categoria 3: Baixa probabilidade / Alto impacto
+
+18.Usuário autenticado como administrador tenta cadastrar produtos, mas excede o limite de itens
+Impacto: Alto (cadastro não permitido)
+Probabilidade: Baixa (limite raramente ultrapassado)
+Categoria 3: Baixa probabilidade / Alto impacto
+---------------------------------------------------------------------------------------------
+Matriz de Risco
+
+Categoria	Descrição	Cenários
+
+1	Baixa probabilidade / Baixo impacto	Nenhum
+2	Alta probabilidade / Baixo impacto	2, 3, 6, 7, 8, 9, 12, 13, 15
+3	Baixa probabilidade / Alto impacto	1, 4, 5, 14, 16, 17, 18
+4	Alta probabilidade / Alto impacto	10, 11
+Dessa forma, podemos visualizar os cenários de teste de acordo com sua probabilidade e impacto, facilitando a priorização e tratamento dos riscos associados.
